@@ -52,6 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void getLocation(View view){
+        //Fei driving
         EditText data =(EditText) findViewById(R.id.editText);
         location = data.getText().toString();
         Geocoder geo = new Geocoder(getApplicationContext());
@@ -65,6 +66,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         longi = locationdata.get(0).getLongitude();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //End of Fei drivin, Eric driving now
         Thread thread = new Thread(new Runnable(){
            @Override
            public void run(){
@@ -119,6 +121,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public static void hideKeyboard(Activity act) {
+        //Eric Driving
         InputMethodManager imm = (InputMethodManager) act.getSystemService(Activity.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.
         View view = act.getCurrentFocus();
